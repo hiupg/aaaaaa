@@ -7649,10 +7649,9 @@ button.bg-dark:focus {
   right: 0;
   left: 0;
   z-index: 1030;
-float: left;
-display: inline-block;
-width: 100%;
-margin-bottom: 20px;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .fixed-bottom {
