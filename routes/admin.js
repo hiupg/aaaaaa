@@ -7,5 +7,8 @@ router.get('/', function (req, res, next) {
     res.render('admin/index', {})
 });
 
+router.get('/produtos', function (req, res, next) {
+    res.render('admin/produtos', {})
+});
 
 module.exports = router;
