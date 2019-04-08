@@ -1,10 +1,11 @@
-<% for(i=1;i<=6;i++){ %>
+<% var y = ['Camiseta Branca Esportiva','Camiseta Azul Escuro Esportiva','Tenis Adidas','Tenis Olimpicos','Tenis Qualquer','Bolsa Legacy?']; 
+for(i=0;i< 6;i++){ %>
 <div class="col-lg-4 col-md-6 mb-4">
     <div class="card h-100">
-      <a href="/produtos"><img class="card-img-top" style="max-height:200px;" src="/image/produto<%- i %>.jpg" alt=""></a>
+      <a href="/produtos"><img class="card-img-top" style="max-height:200px;" src="/image/produto<%- i+1 %>.jpg" alt=""></a>
       <div class="card-body">
         <h4 class="card-title">
-          <a href="/produtos/<%= i %>">Item One</a>
+          <a href="/produtos/<%= i %>"><%= y[i] %></a>
         </h4>
         <h5>$24.99</h5>
         <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>

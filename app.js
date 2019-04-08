@@ -18,7 +18,7 @@ const app = express();
 // Connection Mongoose
 const address_db = 'localhost';
 const port = 27017;
-const db = 'testdb';
+const db = 'greydb';
 
 mongoose.connect(
   'mongodb://'+address_db+':'+port+'/'+db+'', { useNewUrlParser: true }

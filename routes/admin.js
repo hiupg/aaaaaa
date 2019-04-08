@@ -11,4 +11,12 @@ router.get('/produtos', function (req, res, next) {
     res.render('admin/produtos', {})
 });
 
+router.get('/categorias', function (req, res, next) {
+    res.render('admin/categorias/index', {})
+});
+
+router.get('/categorias/cadastrar', function (req, res, next) {
+    res.render('admin/categorias/cadastrar', {})
+});
+
 module.exports = router;
