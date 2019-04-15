@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Categoria = require('../models/categorias')
+const Categoria = require('../models/categoria')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -11,8 +11,9 @@ router.get('/produtos', function (req, res, next) {
     res.render('admin/produtos/index', {})
 });
 
-router.get('/categorias', function (req, res, next) {
-    res.render('admin/categorias/index', {})
+router.get('/categorias', async function (req, res, next) {
+    let _categorias = await Categoria.find({});
+    res.render('admin/categorias/index', {categorias: _categorias})
 });
 
 router.get('/categorias/cadastrar', function (req, res, next) {

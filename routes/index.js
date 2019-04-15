@@ -1,18 +1,12 @@
 var express = require('express');
 var router = express.Router();
-var Test = require('../models/test');
+const Categoria = require('../models/categoria')
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  json = { 
-    title: 'IFMS', 
-    subtitle: 'Instituto Federal de Mato Grosso do Sul' 
-  };
-
-  Test.create(json, function (err, test) {
-    if (err) return handleError(err);
-    res.render('index', { title: test.title, subtitle: test.subtitle });
-  });
+router.get('/', async function (req, res, next) {
+  let _categorias = await Categoria.find({});
+    res.render('index', {categorias:_categorias});
+  
 });
 
 module.exports = router;

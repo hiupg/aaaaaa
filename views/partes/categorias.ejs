@@ -1,7 +1,7 @@
 <div class="list-group">
-    <% var x = ['Tenis','Bolsas','Camiseta']
-    for (var i = 0; i < 3; i++) { %>
-        <a href="/categoria/<%= i %>" class="list-group-item"><%= x[i] %></a>
-    <% } %>
+    <% 
+    categorias.forEach(function(categoria) { %>
+    <a href="/categoria/<%= categoria.id %>" class="list-group-item"><%= categoria.titulo %></a>
+    <% }) %>
   </div>
 
