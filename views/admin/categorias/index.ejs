@@ -118,6 +118,7 @@
                   <tr>
                     <th>titulo</th>
                     <th>id</th>
+                    <th> ações </th>
                   </tr>
                 </thead>
                 <tfoot>
@@ -128,6 +129,13 @@
                     <tr>
                       <td><%= categoria.titulo %></td>
                       <td><%= categoria._id %></td>
+                      <td>
+                        <a href="#" class="btn btn-success" > Editar </a> 
+                          <form action="/admin/categorias" method="post">
+                            <input type="hidden" name="id" value="<%= categoria._id %>">
+                            <input type="submit" class="btn btn-danger" value="Excluir">
+                          </form>
+                      </td>
                     </tr>
                     <% }) %>
                 </tbody>
