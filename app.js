@@ -9,9 +9,9 @@ const mongoose = require('mongoose');
 
 // Routes
 const index = require('./routes/index');
-const produtos = require('./routes/produtos');
+const produtos = require('./routes/admin/produtos');
 const admin = require('./routes/admin');
-const categoria = require('./routes/categoria');
+const categoria = require('./routes/admin/categoria');
 
 const app = express();
 
@@ -45,9 +45,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', index);
-app.use('/produtos', produtos);
+app.use('/admin/produtos', produtos);
 app.use('/admin', admin)
-app.use('/categoria', categoria)
+app.use('/admin/categoria', categoria)
 
 
 // catch 404 and forward to error handler

@@ -12,13 +12,13 @@
   <title>SB Admin - Tables</title>
 
   <!-- Custom fonts for this template-->
-  <link href="../vendor_admin/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="/vendor_admin/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
 
   <!-- Page level plugin CSS-->
-  <link href="../vendor_admin/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+  <link href="/vendor_admin/datatables/dataTables.bootstrap4.css" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="../stylesheets/sb-admin.css" rel="stylesheet">
+  <link href="/stylesheets/sb-admin.css" rel="stylesheet">
 
 </head>
 
@@ -130,10 +130,10 @@
                       <td><%= categoria.titulo %></td>
                       <td><%= categoria._id %></td>
                       <td>
-                        <a href="#" class="btn btn-success" > Editar </a> 
-                          <form action="/admin/categorias" method="post">
+                        <a href="/admin/categorias/editar?id=<%= categoria._id %>" class="btn btn-success" > Editar </a> 
+                          <form action="/admin/categorias" method="post" onsubmit="return confirm('Deseja mesmo deletar essa categoria?')">
                             <input type="hidden" name="id" value="<%= categoria._id %>">
-                            <input type="submit" class="btn btn-danger" value="Excluir">
+                            <input type="submit" class="btn btn-danger" value="Excluir" style="margin-top: 3px;">
                           </form>
                       </td>
                     </tr>
@@ -192,21 +192,21 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <script src="../vendor_admin/jquery/jquery.min.js"></script>
-  <script src="../vendor_admin/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/vendor_admin/jquery/jquery.min.js"></script>
+  <script src="/vendor_admin/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="../vendor_admin/jquery-easing/jquery.easing.min.js"></script>
+  <script src="/vendor_admin/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Page level plugin JavaScript-->
-  <script src="../vendor_admin/datatables/jquery.dataTables.js"></script>
-  <script src="../vendor_admin/datatables/dataTables.bootstrap4.js"></script>
+  <script src="/vendor_admin/datatables/jquery.dataTables.js"></script>
+  <script src="/vendor_admin/datatables/dataTables.bootstrap4.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="../javascripts/sb-admin.min.js"></script>
+  <script src="/javascripts/sb-admin.min.js"></script>
 
   <!-- Demo scripts for this page-->
-  <script src="../javascripts/demo/datatables-demo.js"></script>
+  <script src="/javascripts/demo/datatables-demo.js"></script>
 
 </body>
 

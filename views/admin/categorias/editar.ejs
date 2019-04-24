@@ -108,7 +108,7 @@
 
 
 
-<form class="form-horizontal" method="post" action="/admin/categorias/cadastrar">
+<form class="form-horizontal" method="post" action="/admin/categorias/atualizar">
 <fieldset>
 
 <!-- Form Name -->
@@ -118,7 +118,8 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="titulo">Titulo</label>  
   <div class="col-md-5">
-  <input id="titulo" name="titulo" type="text" placeholder="" class="form-control input-md">
+      <input type="hidden" name="id" value="<%= categoria._id %>">
+  <input id="titulo" name="titulo" value="<%= categoria.titulo%>" class="form-control input-md">
     
   </div>
 </div>
@@ -127,7 +128,7 @@
 <div class="form-group">
   <label class="col-md-4 control-label" for="button"></label>
   <div class="col-md-4">
-    <button id="button" name="button" class="btn btn-primary">Cadastrar</button>
+    <button id="" name="" class="btn btn-primary">Salvar</button>
   </div>
 </div>
 
