@@ -55,7 +55,11 @@ router.post('/cadastrar', function (req, res, next) {
     
     router.post('/atualizar', async function(req, res, next) {
         try{
-            await Produto.findByIdAndUpdate(req.body.id,{titulo:req.body.titulo},{preco:req.body.preco},{descricao:req.body.descricao})
+            await Produto.findByIdAndUpdate(req.body.id,{
+                titulo:req.body.titulo,
+                preco:req.body.preco,
+                descricao:req.body.descricao
+            })
             res.redirect('/admin/produtos')
         } catch (error){
             return next (error)
