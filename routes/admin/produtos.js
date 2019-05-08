@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const Produto = require('../../models/produto')
+const Produto = require('../../models/produto');
+const Categoria = require('../../models/categoria');
 
 
 
 router.get('/', async function (req, res, next) {
-    let _produtos = await Produto.find({});
+    let _produtos = await Produto.find({}).populate('categoria');
     res.render('admin/produtos/index', {produtos: _produtos})
 });
 
@@ -24,6 +25,7 @@ router.post('/cadastrar', function (req, res, next) {
       titulo: req.body.titulo,
       preco: req.body.preco,
       descricao: req.body.descricao,
+      categoria: req.body.categoria,
     });
       produto.save(function(erro){
           if(erro){
@@ -37,8 +39,11 @@ router.post('/cadastrar', function (req, res, next) {
 
     });
 
-    router.get('/cadastrar', function (req, res, next) {
-        res.render('admin/produtos/cadastrar', {})
+    router.get('/cadastrar', async function (req, res, next) {
+        let _categorias = await Categoria.find({})
+        res.render('admin/produtos/cadastrar', {
+            categorias: _categorias
+        })
     });
     
     router.get('/editar', async function (req, res, next) {

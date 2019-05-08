@@ -1,18 +1,18 @@
-<% var y = ['Camiseta Branca Esportiva','Camiseta Azul Escuro Esportiva','Tenis Adidas','Tenis Olimpicos','Tenis Qualquer','Bolsa Legacy?']; 
-for(i=0;i< 6;i++){ %>
+
+<% produtos.forEach(function(produto) {%>
 <div class="col-lg-4 col-md-6 mb-4">
     <div class="card h-100">
-      <a href="/produtos"><img class="card-img-top" style="max-height:200px;" src="/image/produto<%- i+1 %>.jpg" alt=""></a>
+      <a href="/produtos"><img class="card-img-top" style="max-height:200px;" src="" alt=""></a>
       <div class="card-body">
         <h4 class="card-title">
-          <a href="/produtos/<%= i %>"><%= y[i] %></a>
+          <a href="/produtos/<%= produtos._id %>"><%= produto.titulo %></a>
         </h4>
-        <h5>$24.99</h5>
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur!</p>
+        <h5><%= produto.preco %></h5>
+        <p class="card-text"><%= produto.descricao%></p>
       </div>
       <div class="card-footer">
         <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
       </div>
     </div>
   </div>
-  <% } %>
+  <% }) %>
