@@ -2,8 +2,19 @@ const express = require('express');
 const router = express.Router();
 const Produto = require('../../models/produto');
 const Categoria = require('../../models/categoria');
+const multer = require('multer');
+const path = require('path')
 
-
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'public/uploads/');
+    },
+    filename: function (req, file, cb) {
+      cb(null, `${file.fieldname}-${Date.now()}.${path.extname(file.originalname)}`);
+    }
+  });
+  
+  const upload = multer({ storage });
 
 router.get('/', async function (req, res, next) {
     let _produtos = await Produto.find({}).populate('categoria');
@@ -20,12 +31,13 @@ router.post('/', function (req, res, next) {
     })
 });
 
-router.post('/cadastrar', function (req, res, next) {
+router.post('/cadastrar', upload.single('img'), function (req, res, next) {
     let produto = new Produto({ 
       titulo: req.body.titulo,
       preco: req.body.preco,
       descricao: req.body.descricao,
       categoria: req.body.categoria,
+      img: req.file.filename,
     });
       produto.save(function(erro){
           if(erro){

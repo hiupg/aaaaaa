@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="deion" content="">
+  <meta name="author" content="">
+
+  <title>Admin VivaVerde</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="../vendor_site/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+  <!-- Page level plugin CSS-->
+  <link href="../vendor_site_site/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="/stylesheets/sb-admin.css" rel="stylesheet">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand navbar-dark bg-light static-top" style="padding: 0">
+
+    <a class="navbar-brand mr-1" href="/admin" style="padding: 0"><img src="/image/logo.jpg" style="max-width: 225px;"></a>
+
+    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navbar Search -->
+    <form class="form-inline" style="margin-left: 850px">
+        <input class="form-control mr-sm-2" type="search" placeholder="Digite aqui..." aria-label="Barra de pesquisa">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+    </form>
+
+
+  </nav>
+
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <%- include('./partes/menu') %>
+
+    <div id="content-wrapper">
+
+      <div class="container-fluid">
+        <a href="/admin/categorias/cadastrar" class="btn btn-primary">Nova Categoria</a>
+        <br> <br>
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Produtos</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Título</th>
+                    <th>ID</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                  <tbody>
+                    <% categorias.forEach(function(categoria){ %>
+                    <tr>
+                      <td><%= categoria.titulo %></td>
+                      <td><%= categoria._id %></td>
+                      <td>
+                          <div class="form-group">
+                            <a href="/admin/categorias/editar?id=<%= categoria._id %>" class="btn btn-primary">Editar</a>
+                          </div>
+                          <form action="/admin/categorias" method="post" onsubmit="return confirm('Deseja realmente excluir este dado?')">
+                              <input type="hidden" name="id" value="<%= categoria._id %>">
+                              <input type="submit" class="btn btn-primary" value="Excluir">
+                          </form>
+
+                      </td>
+                    </tr>
+                    <% }) %>
+                  </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-footer small text-muted">Atualizado ontem às 11:59 PM</div>
+        </div>
+
+      </div>
+      <!-- /.container-fluid -->
+
+      <!-- Sticky Footer -->
+      <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © VivaVerde 2019</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <!-- /.content-wrapper -->
+
+  </div>
+  <!-- /#wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core Java-->
+  < src="vendor_site/jquery/jquery.min.js"></>
+  < src="vendor_site/bootstrap/js/bootstrap.bundle.min.js"></>
+
+  <!-- Core plugin Java-->
+  < src="vendor_site/jquery-easing/jquery.easing.min.js"></>
+
+  <!-- Page level plugin Java-->
+  < src="vendor_site/chart.js/Chart.min.js"></>
+  < src="vendor_site/datatables/jquery.dataTables.js"></>
+  < src="vendor_site/datatables/dataTables.bootstrap4.js"></>
+
+  <!-- Custom s for all pages-->
+  < src="js/sb-admin.min.js"></>
+
+  <!-- Demo s for this page-->
+  < src="js/demo/datatables-demo.js"></>
+  < src="js/demo/chart-area-demo.js"></>
+
+</body>
+
+</html>

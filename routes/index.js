@@ -17,4 +17,10 @@ router.get('/categoria/:id', async function(req,res,next) {
   res.render('categoria/index',{categorias:_categorias, produtos: _produtos})
 })
 
+router.get('/produtos/:id', async function(req,res,next) {
+  let _categorias = await Categoria.find({});
+  let _produtos = await Produtos.findOne({_id: req.params.id});
+  res.render('produtos/index',{categorias:_categorias, produtos: _produtos});
+})
+
 module.exports = router;

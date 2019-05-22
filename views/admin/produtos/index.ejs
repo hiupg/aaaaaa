@@ -130,7 +130,7 @@
                 <tbody>
                     <% produtos.forEach(function(produto) { %>
                     <tr>
-                      <td><%= produto._img %></td>
+                      <td style="max-height:200px;"><%= produto.img %></td>
                       <td><%= produto._id %></td>
                       <td><%= produto.titulo %></td>
                       <td><%= produto.categoria.titulo %></td>

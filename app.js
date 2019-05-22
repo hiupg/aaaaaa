@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const sassMiddleware = require('node-sass-middleware');
 const mongoose = require('mongoose');
+const multer = require('multer')
 
 // Routes
 const index = require('./routes/index');
