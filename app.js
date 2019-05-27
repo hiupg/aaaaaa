@@ -48,7 +48,7 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use('/', index);
 app.use('/admin/produtos', produtos);
 app.use('/admin', admin)
-app.use('/admin/categoria', categoria)
+app.use('/admin/categorias', categoria)
 
 
 // catch 404 and forward to error handler

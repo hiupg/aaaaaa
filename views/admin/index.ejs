@@ -9,7 +9,7 @@
   <meta name="deion" content="">
   <meta name="author" content="">
 
-  <title>Admin VivaVerde</title>
+  <title>Admin GreyStore</title>
 
   <!-- Custom fonts for this template-->
   <link href="../vendor_site/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,49 +47,6 @@
     <!-- Sidebar -->
     <%- include('./partes/menu') %>
 
-    <div id="content-wrapper">
-
-      <div class="container-fluid">
-        <a href="/admin/categorias/cadastrar" class="btn btn-primary">Nova Categoria</a>
-        <br> <br>
-        <!-- DataTables Example -->
-        <div class="card mb-3">
-          <div class="card-header">
-            <i class="fas fa-table"></i>
-            Produtos</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>Título</th>
-                    <th>ID</th>
-                    <th>Ações</th>
-                  </tr>
-                </thead>
-                  <tbody>
-                    <% categorias.forEach(function(categoria){ %>
-                    <tr>
-                      <td><%= categoria.titulo %></td>
-                      <td><%= categoria._id %></td>
-                      <td>
-                          <div class="form-group">
-                            <a href="/admin/categorias/editar?id=<%= categoria._id %>" class="btn btn-primary">Editar</a>
-                          </div>
-                          <form action="/admin/categorias" method="post" onsubmit="return confirm('Deseja realmente excluir este dado?')">
-                              <input type="hidden" name="id" value="<%= categoria._id %>">
-                              <input type="submit" class="btn btn-primary" value="Excluir">
-                          </form>
-
-                      </td>
-                    </tr>
-                    <% }) %>
-                  </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Atualizado ontem às 11:59 PM</div>
-        </div>
 
       </div>
       <!-- /.container-fluid -->
@@ -98,7 +55,7 @@
       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © VivaVerde 2019</span>
+            <span>Copyright © GreyStore 2019</span>
           </div>
         </div>
       </footer>
