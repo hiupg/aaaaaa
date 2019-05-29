@@ -7,8 +7,11 @@ const ProdutoSchema = new Schema({
     img:{ type: String, required:true},
     categoria:{ type: mongoose.Schema.Types.ObjectId, ref: Categoria, required:true},
     preco:{ type: String, required:true},
-    descricao:{ type: String, required:true}
+    descricao:{ type: String, required:true},
+    contViews:{ type: Number, default:0, required:false}
 });
+
+ProdutoSchema.index({name: 'text', 'profile.something': 'text'});
 
 const produto = mongoose.model("Produtos", ProdutoSchema);
 

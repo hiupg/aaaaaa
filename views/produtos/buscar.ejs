@@ -8,13 +8,13 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Shop Item - Start Bootstrap Template</title>
+  <title>Shop Homepage - Start Bootstrap Template</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="/vendor_item/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/vendor_site/bootstrap/css/bootstrap.css" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="/stylesheets/shop-item.css" rel="stylesheet">
+  <link href="/stylesheets/shop-homepage.css" rel="stylesheet">
 
 </head>
 
@@ -53,30 +53,30 @@
 
     <div class="row">
 
-      <%- include('../partes/categorias'); %>
+      <div class="col-lg-3">
+
+        <h1 class="my-4">Shop Name</h1>
+        <%- include('../partes/categorias') %>
+
+      </div>
       <!-- /.col-lg-3 -->
 
       <div class="col-lg-9">
-        <div class="card mt-4">
-          <img class="card-img-top img-fluid" src="/uploads/<%= produtos.img %>" style="min-width:823px; max-height: 400px;" alt="">
-          <div class="card-body">
-            <h3 class="card-title"><%= produtos.titulo %></h3>
-            <h4><%= produtos.preco %></h4>
-            <h6><%= produtos.contViews %></h6>
-            <p class="card-text"><%= produtos.descricao  %></p>
-            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-            4.0 stars
-          </div>
-        </div>
-        <!-- /.card -->
 
         
-        <!-- /.card -->
+
+        <div class="row">
+
+          <%- include('../partes/lista-produtos') %>
+
+        </div>
+        <!-- /.row -->
 
       </div>
       <!-- /.col-lg-9 -->
 
     </div>
+    <!-- /.row -->
 
   </div>
   <!-- /.container -->
@@ -90,8 +90,8 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor_item/jquery/jquery.min.js"></script>
-  <script src="vendor_item/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor_site/jquery/jquery.min.js"></script>
+  <script src="vendor_site/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
