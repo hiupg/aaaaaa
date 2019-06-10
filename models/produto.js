@@ -11,7 +11,7 @@ const ProdutoSchema = new Schema({
     contViews:{ type: Number, default:0, required:false}
 });
 
-ProdutoSchema.index({name: 'text', 'profile.something': 'text'});
+ProdutoSchema.index({titulo: 'text'});
 
 const produto = mongoose.model("Produtos", ProdutoSchema);
 

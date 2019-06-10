@@ -6,14 +6,14 @@ const Produtos = require('../models/produto')
 /* GET home page. */
 router.get('/', async function (req, res, next) {
   let _categorias = await Categoria.find({});
-  let _produtos = await Produtos.find({}).limit(6).sort({contViews:-1});
+  let _produtos = await Produtos.find({}).sort({contViews:-1}).limit(6);
     res.render('index', {categorias:_categorias, produtos: _produtos});
   
 }),
 
-router.get('/produto/buscar?:titulo', async function(req,res,next) {
+router.get('/produto/buscar', async function(req,res,next) {
   let _categorias = await Categoria.find({});
-  let _produtos = await Produtos.find({$text: {$search: $searchString}}).skip(20).exec(function(err, docs){'erro'});
+  let _produtos = await Produtos.find({$text: {$search: req.query.titulo}})
   res.render('produtos/buscar',{categorias:_categorias, produtos: _produtos})
 }),
 
